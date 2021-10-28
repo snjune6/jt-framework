@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.link.jk.jkframework.mapper.UserMapper">
+
+
+    <resultMap id="userMap" type="com.link.jk.jkframework.dto.UserDto">
+        <result column="USER_ID" property="userId" />
+        <result column="USER_PW" property="userPw" />
+        <result column="USER_ROLE" property="userRole" />
+    </resultMap>
+
+
+
+    <insert id="joinUser" parameterType="com.link.jk.jkframework.dto.UserDetailDto">
+        INSERT INTO tb_user
+        (
+            USER_ID
+            , USER_PW
+            , USER_ROLE
+        )
+        VALUES
+        (
+            #{userId}
+            , #{userPw}
+            , #{userRole}
+        )
+    </insert>
+
+    <select id="selectUserId" parameterType="String" resultMap="userMap">
+        select USER_ID
+            , USER_PW
+            , USER_ROLE
+        from tb_user
+        where USER_ID=#{userId}
+    </select>
+
+</mapper>

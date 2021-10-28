@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.link.jk.jkframework.mapper.CategoryMapper">
+
+    <resultMap id="categoryFullList" type="com.link.jk.jkframework.dto.CategoryDto">
+        <result column="NO" property="no" />
+        <result column="PARENT_NO" property="parentNo" />
+        <result column="CATEGORY_NM" property="categoryNm" />
+        <result column="CATEGORY_GB" property="categoryGb" />
+        <result column="CATEGORY_MAIN" property="categoryMain" />
+        <result column="CATEGORY_SORT" property="categorySort" />
+        <result column="CATEGORY_STEP" property="categoryStep" />
+        <result column="CATEGORY_UPDATE" property="categoryUpdate" />
+        <result column="CATEGORY_CREATE" property="categoryCreate" />
+        <result column="CATEGORY_DELETE" property="categoryDelete" />
+    </resultMap>
+
+
+    <select id="selectFullCategoryList" resultMap="categoryFullList">
+        SELECT *
+            FROM tb_category
+        WHERE CATEGORY_DEL = 0
+        AND CATEGORY_MAIN = 1
+        AND CATEGORY_STEP != 0
+        ORDER BY CATEGORY_SORT ASC
+    </select>
+
+</mapper>

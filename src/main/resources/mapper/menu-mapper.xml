@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.link.jk.jkframework.mapper.MenuMapper">
+
+    <resultMap id="menuFullList" type="com.link.jk.jkframework.dto.MenuDto">
+        <result column="MENU_ID" property="menuId" />
+        <result column="MENU_NM" property="menuNm" />
+        <result column="MENU_LINK" property="menuLink" />
+        <result column="MENU_ALT" property="menuAlt" />
+        <result column="MENU_SORT" property="menuSort" />
+        <result column="MENU_STEP" property="menuStep" />
+        <result column="MENU_TYPE" property="menuType" />
+        <result column="MENU_RETURN" property="menuReturn" />
+    </resultMap>
+
+    <select id="selectTests" resultType="hashMap">
+        SELECT '1' AS test
+    </select>
+
+    <insert id="insertMenu" parameterType="com.link.jk.jkframework.dto.MenuDto">
+        INSERT INTO TB_MENU
+        (
+            MENU_ID,
+            MENU_NM,
+            MENU_LINK,
+            MENU_ALT,
+            MENU_SORT,
+            MENU_STEP,
+            MENU_UPDATE,
+            MENU_CREATE
+        )
+        VALUES
+        (
+            #{menuId},
+            #{menuNm},
+            #{menuLink},
+            #{menuAlt},
+            #{menuSort},
+            #{menuStep},
+            CURRENT_TIMESTAMP,
+            CURRENT_TIMESTAMP
+        )
+    </insert>
+
+    <insert id="insertMenu2" parameterType="com.link.jk.jkframework.dto.MenuDto">
+        INSERT INTO TB_MENU
+        (
+            MENU_ID,
+            MENU_NM,
+            MENU_LINK,
+            MENU_ALT,
+            MENU_SORT,
+            MENU_STEP,
+            MENU_UPDATE,
+            MENU_CREATE
+        )
+        VALUES
+            (
+                #{menuId},
+                #{menuNm},
+                #{menuLink},
+                #{menuAlt},
+                #{menuSort},
+                #{menuStep},
+                CURRENT_TIMESTAMP,
+                CURRENT_TIMESTAMP
+            )
+    </insert>
+
+    <select id="selectFullMenuList" resultMap="menuFullList">
+        SELECT *
+            FROM tb_menu
+            WHERE MENU_DELETE IS NULL
+            ORDER BY MENU_SORT ASC
+    </select>
+
+    <select id="selectMenuType" parameterType="String" resultMap="menuFullList">
+        SELECT *
+            FROM tb_menu
+            WHERE MENU_DELETE IS NULL
+            AND MENU_LINK = #{menuLink}
+    </select>
+
+    <select id="selectMenuReturn" parameterType="String" resultMap="menuFullList">
+        SELECT *
+            FROM tb_menu
+            WHERE MENU_DELETE IS NULL
+            AND MENU_ID = #{menuId}
+    </select>
+
+</mapper>
