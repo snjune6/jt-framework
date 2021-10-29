@@ -33,6 +33,7 @@ public class UriInterceptor implements HandlerInterceptor {
         System.out.println("=========================");
 
         request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
 
         Enumeration<String> en = request.getParameterNames();
         while (en.hasMoreElements()) {
@@ -72,6 +73,8 @@ public class UriInterceptor implements HandlerInterceptor {
             System.err.println("menuType is null!!");
         } else {
             if(menuType==1) {
+
+                System.out.println("menuDto.getMenuId() : " + menuDto.getMenuId());
                 response.sendRedirect("/contents/" + menuDto.getMenuId());
                 return false;
             }
