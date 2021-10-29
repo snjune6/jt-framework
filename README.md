@@ -1,5 +1,4 @@
 # jt-framework
-![jk](jk.jpg)
 ## 프로젝트 설명
 * 스프링 부트
 ## 프로젝트 환경
@@ -41,3 +40,4 @@
 * 다음 사진과 같이 로고와 로깅이 된다면 작업환경은 완료
 ![logo](logo.JPG)
 ![logo2](logo2.JPG)
+![jk](jk.jpg)
