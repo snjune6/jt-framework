@@ -1,4 +1,5 @@
 # jt-framework
+![jk](jk.jpg){: width="100" height="100"}
 ## 프로젝트 설명
 * 스프링 부트
 ## 프로젝트 환경
@@ -29,3 +30,14 @@
 
 ## 구성 제외
 * spring-boot-starter-logging
+
+
+## 대략적인 이클립스 셋팅( 전자정부 프레임워크 )
+* 이클립스 실행
+* https://github.com/snjune6/jt-framework.git 클론 후
+* 아래사진과 같이 진행하면 프로젝트가 셋팅이 된다. 
+![git_imp](git_imp.png)
+* 이후 서버는 스프링 부트에 내장되어 있으므로 프로젝트 우클릭 후 run as에서 스프링 관련 서버실행하는 부분이 있음
+* 다음 사진과 같이 로고와 로깅이 된다면 작업환경은 완료
+![logo](logo.JPG)
+![logo2](logo2.JPG)
