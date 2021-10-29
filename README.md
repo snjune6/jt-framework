@@ -38,6 +38,8 @@
 ![git_imp](git_imp.png)
 * 이후 서버는 스프링 부트에 내장되어 있으므로 프로젝트 우클릭 후 run as에서 스프링 관련 서버실행하는 부분이 있음
 * 다음 사진과 같이 로고와 로깅이 된다면 작업환경은 완료
+* 이클립스는 Lombok셋팅을 해야하는데 이거는 11월 1일날 작성하겠습니다.
+* https://rearea.tistory.com/81 <- Lombok셋팅과 Lombok가 이용되는 이유/설명
 ![logo](logo.JPG)
 ![logo2](logo2.JPG)
 ![jk](jk.jpg)
