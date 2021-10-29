@@ -1,4 +1,4 @@
-# jk-framework
+# jt-framework
 ## 프로젝트 설명
 * 스프링 부트
 ## 프로젝트 환경
