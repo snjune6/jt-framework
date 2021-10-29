@@ -1,5 +1,5 @@
 # jt-framework
-![jk](jk.jpg){: width="100" height="100"}
+![jk](jk.jpg)
 ## 프로젝트 설명
 * 스프링 부트
 ## 프로젝트 환경
