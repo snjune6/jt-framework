@@ -1,6 +1,6 @@
 # jk-framework
 ## 프로젝트 설명
-* 스프링 부트학습 및 기존 링크플랜텍 개편작업
+* 스프링 부트
 ## 프로젝트 환경
 * Java 1.8.0_301
 * apache-maven-3.8.2
@@ -9,7 +9,6 @@
 * jsp
 * Intellij
 
-* web또는 kcms아래 layout을 제외한 곳에 작업한다.
 ## 프로젝트 구성
 ### 의존성
 * spring-boot-starter-security
